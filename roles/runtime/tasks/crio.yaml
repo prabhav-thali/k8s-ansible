@@ -1,6 +1,6 @@
 ---
 - name: Install CRI-O and dependencies.
-  yum:
+  apt:
     name:
       - conmon
     state: present

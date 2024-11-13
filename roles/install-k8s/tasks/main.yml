@@ -16,14 +16,14 @@
     hostnamectl set-hostname $(hostname | cut -d "." -f1)
 
 - name: Install prereq packages
-  yum:
+  apt:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - conntrack-tools
+      - conntrack
       - socat
-      - iproute-tc
+      - iproute2
       - iptables
 
 - name: Template a kubelet service to /usr/lib/systemd/system/kubelet.service

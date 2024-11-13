@@ -53,7 +53,7 @@
         remote_src: yes
 
     - name: Install iptables
-      yum:
+      apt:
         name: iptables
 
     - name: Install runc - {{ runc_version }}
