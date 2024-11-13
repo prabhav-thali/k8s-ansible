@@ -15,6 +15,11 @@
   shell: |
     hostnamectl set-hostname $(hostname | cut -d "." -f1)
 
+- name: Update apt-get repo and cache
+  apt:
+    force_apt_get: yes
+    update_cache: yes
+
 - name: Install prereq packages
   apt:
     name: "{{ packages }}"
