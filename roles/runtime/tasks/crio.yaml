@@ -4,7 +4,7 @@
     name:
       - conmon
     state: present
-    disable_gpg_check: true
+    allow_unauthenticated: true
 
 - name: Download CRI-O - {{ crio_version }}
   unarchive:

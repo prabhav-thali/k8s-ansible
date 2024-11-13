@@ -4,7 +4,7 @@
     name:
       - lvm2
     state: present
-    disable_gpg_check: true
+    allow_unauthenticated: true
 
 - name: Download and set up containerd - {{ containerd_version }}
   unarchive:
