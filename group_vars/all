@@ -33,7 +33,9 @@ registry_mirrors:
 
 ##### Kubernetes Configurations #####
 k8s_tar_bundles:
-  - kubernetes.tar.gz
+  - kubernetes-test-linux-s390x.tar.gz
+  - kubernetes-client-linux-s390x.tar.gz
+  - kubernetes-server-linux-s390x.tar.gz
 apiserver_port: 992
 cluster_name: "k8s-cluster-1"
 #powervs_dns_zone: "k8s.test"

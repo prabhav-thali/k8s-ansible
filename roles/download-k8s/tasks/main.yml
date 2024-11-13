@@ -2,7 +2,7 @@
   set_fact:
     src_template: >-
       {% if s3_server == 'dl.k8s.io' -%}
-        https://{{ s3_server }}/{{ directory }}/{{ build_version }}
+        https://{{ s3_server }}/{{ build_version }}
       {%- else -%}
         https://{{ s3_server }}/{{ bucket }}/{{ directory }}/{{ build_version }}
       {%- endif %}
