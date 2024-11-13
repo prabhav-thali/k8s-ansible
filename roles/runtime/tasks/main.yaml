@@ -48,7 +48,7 @@
         mode: '0644'
     - name: Install crictl - {{ critools_version }}
       unarchive:
-        src: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v{{ critools_version }}/crictl-v{{ critools_version }}-linux-ppc64le.tar.gz"
+        src: "https://github.com/kubernetes-sigs/cri-tools/releases/download/v{{ critools_version }}/crictl-v{{ critools_version }}-linux-s390x.tar.gz"
         dest: "/usr/local/bin/"
         remote_src: yes
 
@@ -58,7 +58,7 @@
 
     - name: Install runc - {{ runc_version }}
       get_url:
-        url: "https://github.com/opencontainers/runc/releases/download/v{{ runc_version }}/runc.ppc64le"
+        url: "https://github.com/opencontainers/runc/releases/download/v{{ runc_version }}/runc.s390x"
         dest: /usr/local/bin/runc
         mode: '0755'
 
