@@ -2,18 +2,18 @@
 # network interface on ppc64le-https://jsw.ibm.com/browse/POWERCLOUD-16
 # This workaround fixed above failure.
 # Follow up task to remove this in future https://jsw.ibm.com/browse/POWERCLOUD-34
-- name: Disable tx-checksumming on default network interface
-  command: ethtool --offload {{ ansible_default_ipv4['interface'] }} tx-checksumming off
-  when: ansible_default_ipv4['interface'] is defined
+# - name: Disable tx-checksumming on default network interface
+#   command: ethtool --offload {{ ansible_default_ipv4['interface'] }} tx-checksumming off
+#   when: ansible_default_ipv4['interface'] is defined
 
 - name: Disable SELinux and disable SWAP in fstab
   include_role:
     name: disable-swap-selinux
 
 # PowerVS has default domainname set as .power-iaas.cloud.ibm.com which is not present in the cloud
-- name: Remove domainname from the hostname
-  shell: |
-    hostnamectl set-hostname $(hostname | cut -d "." -f1)
+# - name: Remove domainname from the hostname
+#   shell: |
+#     hostnamectl set-hostname $(hostname | cut -d "." -f1)
 
 - name: Update apt-get repo and cache
   apt:
