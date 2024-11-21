@@ -2,7 +2,7 @@
   import_tasks: calico-manifest.yaml
   when: calico_installation_type == "manifest"
 
-- name: Install Calico using tigera operator.
-  import_tasks: calico-operator.yaml
-  when: calico_installation_type == "operator"
+# - name: Install Calico using tigera operator.
+#   import_tasks: calico-operator.yaml
+#   when: calico_installation_type == "operator"
 
