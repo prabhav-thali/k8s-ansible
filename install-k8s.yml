@@ -7,7 +7,7 @@
     - download-k8s
     - install-k8s
 
-- name: Install networking - flannel
+- name: Install networking - calico
   hosts: masters
   roles:
-    - install-flannel
+    - install-calico
