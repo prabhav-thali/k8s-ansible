@@ -64,10 +64,10 @@ bucket: s390x-ci-builds
 # build_version: d39214ade1d60c
 
 ##### Calico Configurations #####
-calico_version: v3.27.0
+#calico_version: v3.27.0
 # The available methods of installation for Calico can be either using the tigera operator, or using the manifest.
 # Choose between "operator" or "manifest" (default) for the desired installation method.
-calico_installation_type: manifest
+flannel_installation_type: manifest
 
 ##### List of images to be prepulled #####
 prepull_images: []
