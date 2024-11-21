@@ -5,7 +5,7 @@
     mode: '0755'
 
 - name: Modify Flannel ConfigMap podCIDR
-  alineinfile:
+  lineinfile:
     path: "/tmp/kube-flannel.yml"
     regexp: '"Network": ".*"'  # Regex to match the podCIDR line
     line: '      "Network": "172.20.0.0/16",'  # Replace with your desired CIDR
