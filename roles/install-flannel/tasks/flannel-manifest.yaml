@@ -1,10 +1,10 @@
 - name: Download flannel manifest
   get_url:
     url: "https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
-    dest: /tmp/flannel
+    dest: /tmp/kube-flannel.yml
     mode: '0755'
 
 - name: Set up Flannel CNI from manifest
-  command: kubectl create -f /tmp/flannel.yaml
+  command: kubectl create -f /tmp/kube-flannel.yml
   environment:
     KUBECONFIG: /etc/kubernetes/admin.conf
