@@ -10,6 +10,10 @@
 #     regexp: '"Network": ".*"'  # Regex to match the podCIDR line
 #     line: '      "Network": "172.20.0.0/16",'  # Replace with your desired CIDR
 #     backrefs: yes
+- name: Create cni directory
+  file:
+    path: /opt/cni/bin
+    state: directory
 
 - name: Download and setup cni plugins
   unarchive:
