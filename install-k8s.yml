@@ -6,6 +6,7 @@
     - runtime
     - download-k8s
     - install-k8s
+    - install-cni
 
 - name: Install networking - flannel
   hosts: masters
