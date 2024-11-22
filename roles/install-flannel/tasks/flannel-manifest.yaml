@@ -11,6 +11,16 @@
 #     line: '      "Network": "172.20.0.0/16",'  # Replace with your desired CIDR
 #     backrefs: yes
 
+- name: Download and setup cni plugins
+  unarchive:
+    src: "{{ cni_plugins_url }}/{{ cni_plugins_version }}/{{ cni_plugins_tarball }}"
+    dest: "/opt/cni/bin"
+    remote_src: yes
+    extra_opts:
+      - --strip-components=1
+  retries: 3
+  delay: 5
+
 - name: Set up Flannel CNI from manifest
   command: kubectl create -f /tmp/kube-flannel.yml
   environment:
