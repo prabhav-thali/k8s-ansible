@@ -4,12 +4,12 @@
     dest: /tmp/kube-flannel.yml
     mode: '0755'
 
-- name: Modify Flannel ConfigMap podCIDR
-  lineinfile:
-    path: "/tmp/kube-flannel.yml"
-    regexp: '"Network": ".*"'  # Regex to match the podCIDR line
-    line: '      "Network": "172.20.0.0/16",'  # Replace with your desired CIDR
-    backrefs: yes
+# - name: Modify Flannel ConfigMap podCIDR
+#   lineinfile:
+#     path: "/tmp/kube-flannel.yml"
+#     regexp: '"Network": ".*"'  # Regex to match the podCIDR line
+#     line: '      "Network": "172.20.0.0/16",'  # Replace with your desired CIDR
+#     backrefs: yes
 
 - name: Set up Flannel CNI from manifest
   command: kubectl create -f /tmp/kube-flannel.yml

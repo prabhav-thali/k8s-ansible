@@ -39,7 +39,7 @@ k8s_tar_bundles:
 apiserver_port: 992
 cluster_name: "k8s-cluster-1"
 #vpc_dns_zone: "k8s.test"
-pod_subnet: 172.20.0.0/16
+pod_subnet: 10.244.0.0/16
 #extra_cert: "{{ cluster_name }}-master.{{ vpc_dns_zone }}"
 # https://github.com/kubernetes/kubernetes/blob/66334f02e8c520df7973c397246da82cd4db2769/cmd/kubeadm/app/util/version_test.go#L193:L199 for more information
 release_marker: ci/latest
@@ -64,11 +64,11 @@ bucket: s390x-ci-builds
 # build_version: d39214ade1d60c
 
 ##### Calico Configurations #####
-calico_version: v3.27.0
+#calico_version: v3.27.0
 # The available methods of installation for Calico can be either using the tigera operator, or using the manifest.
 # Choose between "operator" or "manifest" (default) for the desired installation method.
-#flannel_installation_type: manifest
-calico_installation_type: manifest
+flannel_installation_type: manifest
+#calico_installation_type: manifest
 
 ##### List of images to be prepulled #####
 prepull_images: []
